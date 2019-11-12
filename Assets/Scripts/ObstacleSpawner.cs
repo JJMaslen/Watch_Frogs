@@ -41,7 +41,7 @@ public class ObstacleSpawner : MonoBehaviour
     IEnumerator Delay()
     {
         call = false;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(Random.Range(0.5f,1));
         Transform temp = spawns[Random.Range(0, spawns.Length)].transform;
         Instantiate(obst, temp.position, temp.rotation);
         call = true;
