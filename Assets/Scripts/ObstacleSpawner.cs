@@ -5,6 +5,7 @@ using UnityEngine;
 public class ObstacleSpawner : MonoBehaviour
 {
     public GameObject obst;
+    public Transform [] spawns;
     private bool nsc; //no spawnables catcher
     // Start is called before the first frame update
     void Start()
@@ -17,6 +18,11 @@ public class ObstacleSpawner : MonoBehaviour
         {
             nsc = false;
         }
+
+        for (int i = 0; i < this.gameObject.transform.childCount; i++)
+        {
+            spawns[i] = this.gameObject.transform.GetChild(i);
+        }
     }
 
     // Update is called once per frame
@@ -24,7 +30,7 @@ public class ObstacleSpawner : MonoBehaviour
     {
         if (!nsc)
         {
-
+            Instantiate(obst, spawns[Random.Range(0, spawns.Length)]);
         }
     }
 }
