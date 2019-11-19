@@ -28,13 +28,13 @@ public class FrogMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
 		{
 			targetPosition += new Vector3(-MovementAmount, 0, 0);
-			targetRotation = Quaternion.Euler(0, -90, 0);
+			targetRotation = Quaternion.Euler(0, 90, 0);
 		}
 
 		if (Input.GetKeyDown(KeyCode.D))
 		{
 			targetPosition += new Vector3(MovementAmount, 0, 0);
-			targetRotation = Quaternion.Euler(0, 90, 0);
+			targetRotation = Quaternion.Euler(0, -90, 0);
 		}
 
 		if (Input.GetKeyDown(KeyCode.S))
