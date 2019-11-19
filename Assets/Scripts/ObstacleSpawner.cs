@@ -7,8 +7,10 @@ public class ObstacleSpawner : MonoBehaviour
     public GameObject obst;
     public Transform [] spawns;
     private bool nsc, call; //no spawnables catcher
-    // Start is called before the first frame update
-    void Start()
+	public int spawncap = 0;
+	public bool aschild = false;
+	// Start is called before the first frame update
+	void Start()
     {
         call = true;
         if (obst == null)
@@ -31,11 +33,25 @@ public class ObstacleSpawner : MonoBehaviour
     {
         if (!nsc)
         {
-            if (call)
-            {
-                StartCoroutine(Delay());
-            }
-        }
+			if(spawncap > 0)
+			{ 
+				for (int i = 0; i < spawncap; i++)
+				{
+					if (call)
+					{
+						StartCoroutine(Delay());
+					}
+				}
+			}
+			else
+			{
+				if (call)
+				{
+					StartCoroutine(Delay());
+				}
+			}
+
+		}
     }
 
     IEnumerator Delay()
@@ -43,7 +59,14 @@ public class ObstacleSpawner : MonoBehaviour
         call = false;
         yield return new WaitForSeconds(1);
         Transform temp = spawns[Random.Range(0, spawns.Length)].transform;
-        Instantiate(obst, temp.position, temp.rotation);
+		if (aschild)
+		{
+			Instantiate(obst, temp);
+		}
+		else
+		{
+			Instantiate(obst, temp.position, temp.rotation);
+		}
         call = true;
     }
 }
