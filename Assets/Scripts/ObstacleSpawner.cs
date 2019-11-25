@@ -8,6 +8,7 @@ public class ObstacleSpawner : MonoBehaviour
     public Transform [] spawns;
     private bool nsc, call; //no spawnables catcher
 	public int spawncap = 0;
+	int spawncount = 0;
 	public bool aschild = false;
 	// Start is called before the first frame update
 	void Start()
@@ -31,19 +32,23 @@ public class ObstacleSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		
         if (!nsc)
         {
-			if(spawncap > 0)
+			if(spawncap > spawncount)
 			{ 
 				for (int i = 0; i < spawncap; i++)
 				{
 					if (call)
 					{
 						StartCoroutine(Delay());
+						spawncount++;
 					}
+
 				}
+				
 			}
-			else
+			else if (spawncap > 0 && spawncap > spawncount)
 			{
 				if (call)
 				{

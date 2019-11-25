@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1258506092361740253}
   m_Layer: 0
   m_Name: Vehicle
-  m_TagString: Obstacle
+  m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1258506092361740252}
-  m_Mesh: {fileID: -8039613103989778838, guid: 9d6ca0faa4d1ac94d865e7c917610015, type: 3}
+  m_Mesh: {fileID: -4696667188155458734, guid: 99b348f7ca0fce540abda423c9a15f67, type: 3}
 --- !u!23 &1258506092361740224
 MeshRenderer:
   m_ObjectHideFlags: 0

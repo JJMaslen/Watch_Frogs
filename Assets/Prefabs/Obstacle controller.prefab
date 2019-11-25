@@ -242,10 +242,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 905cdb1d1d49a764cbd6b288f8aab3ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obst: {fileID: 1258506092361740252, guid: 808a0b5b65b9f19469c47e5d963a7fa8, type: 3}
+  obst: {fileID: 2686969921951362687, guid: 1d1b08f0414a2914697257bf84cb81c7, type: 3}
   spawns:
   - {fileID: 5965097782234283966}
   - {fileID: 5965097782511843251}
   - {fileID: 5754028490192428464}
-  spawncap: 0
+  spawncap: 1
   aschild: 0
