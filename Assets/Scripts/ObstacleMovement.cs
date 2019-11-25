@@ -6,6 +6,7 @@ public class ObstacleMovement : MonoBehaviour
 {
     Rigidbody rb;
     public float speed = 10.0f;
+	public Vector3 currentspeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +16,7 @@ public class ObstacleMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = transform.right * speed;
+		currentspeed = (transform.forward * speed) * -1;
+		rb.velocity = (transform.forward * speed) * -1;
     }
 }
