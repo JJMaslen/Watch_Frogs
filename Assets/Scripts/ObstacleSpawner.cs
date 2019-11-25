@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ObstacleSpawner : MonoBehaviour
 {
+	public bool spawncaprand = false;
     public GameObject obst;
     public Transform [] spawns;
     private bool nsc, call; //no spawnables catcher
@@ -11,9 +12,15 @@ public class ObstacleSpawner : MonoBehaviour
 	public bool limitless = true;
 	//int spawncount = 0;
 	public bool aschild = false;
+	public Vector3 offset;
 	// Start is called before the first frame update
 	void Start()
     {
+		if (spawncaprand)
+		{
+			spawncap = Random.Range(0, 1);
+		}
+
         call = true;
         if (obst == null)
         {
@@ -64,8 +71,26 @@ public class ObstacleSpawner : MonoBehaviour
     IEnumerator Delay()
     {
         call = false;
-        yield return new WaitForSeconds(Random.Range(0.5f,2));
-        Transform temp = spawns[Random.Range(0, spawns.Length)].transform;
+		float secs = Random.Range(0.5f, 2);
+		if (spawncaprand)
+		{
+			yield return new WaitForSeconds(0);
+		}
+		else
+		{
+			yield return new WaitForSeconds(secs);
+		}
+
+		Transform temp;
+		if (spawns.Length > 1)
+		{
+			temp = spawns[Random.Range(0, spawns.Length)].transform;
+		}
+		else
+		{
+			temp = spawns[0].transform;
+		}
+		
 		if (aschild)
 		{
 			Instantiate(obst, temp);
