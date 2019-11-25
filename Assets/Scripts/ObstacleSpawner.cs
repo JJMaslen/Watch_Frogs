@@ -8,7 +8,8 @@ public class ObstacleSpawner : MonoBehaviour
     public Transform [] spawns;
     private bool nsc, call; //no spawnables catcher
 	public int spawncap = 0;
-	int spawncount = 0;
+	public bool limitless = true;
+	//int spawncount = 0;
 	public bool aschild = false;
 	// Start is called before the first frame update
 	void Start()
@@ -35,34 +36,35 @@ public class ObstacleSpawner : MonoBehaviour
 		
         if (!nsc)
         {
-			if(spawncap > spawncount)
-			{ 
-				for (int i = 0; i < spawncap; i++)
-				{
-					if (call)
-					{
-						StartCoroutine(Delay());
-						spawncount++;
-					}
-
-				}
-				
-			}
-			else if (spawncap > 0 && spawncap > spawncount)
+			if (limitless)
 			{
 				if (call)
 				{
 					StartCoroutine(Delay());
 				}
 			}
+			else
+			{
+				if (spawncap > 0)
+				{
+					for (int i = 0; i < spawncap; i++)
+					{
+						if (call)
+						{
+							StartCoroutine(Delay());
+							spawncap--;
+						}
 
+					}
+				}
+			}
 		}
     }
 
     IEnumerator Delay()
     {
         call = false;
-        yield return new WaitForSeconds(Random.Range(0.5f,1));
+        yield return new WaitForSeconds(Random.Range(0.5f,2));
         Transform temp = spawns[Random.Range(0, spawns.Length)].transform;
 		if (aschild)
 		{
