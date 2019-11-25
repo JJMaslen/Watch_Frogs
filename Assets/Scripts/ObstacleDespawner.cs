@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ObstacleDespawner : MonoBehaviour
 {
+	public string target = "Car";
     // Start is called before the first frame update
     void Start()
     {
@@ -16,9 +17,9 @@ public class ObstacleDespawner : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Car")
+        if (other.gameObject.tag == target)
         {
             Destroy(other.gameObject);
         }
