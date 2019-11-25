@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Obstacle
   - Car
+  - Frog
   layers:
   - Default
   - TransparentFX
