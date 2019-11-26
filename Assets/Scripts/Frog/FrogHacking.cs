@@ -26,7 +26,7 @@ public class FrogHacking : MonoBehaviour
 			if (dist < MinimumDistance)
 			{
 				//car.transform.position + new Vector3(0, 4, 0) +
-				arrowObj.transform.position = car.transform.position + new Vector3(0, 4, 0);
+				arrowObj.transform.position = car.transform.position + new Vector3(0, 3, 0);
 				targetCar = car;
 			}
 		}

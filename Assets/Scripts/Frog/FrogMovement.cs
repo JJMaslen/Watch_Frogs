@@ -14,6 +14,8 @@ public class FrogMovement : MonoBehaviour
 	private Vector3 targetPosition;
 	private Quaternion targetRotation;
 
+
+	private Transform parent;
     void Start()
     {
 		targetPosition = transform.position;
@@ -25,7 +27,7 @@ public class FrogMovement : MonoBehaviour
 		transform.position = Vector3.Lerp(transform.position, targetPosition, MovementSpeed);
 		transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, RotationSpeed);
 
-        if (Input.GetKeyDown(KeyCode.S))
+		if (Input.GetKeyDown(KeyCode.S))
 		{
 			targetPosition += new Vector3(-MovementAmount, 0, 0);
 			targetRotation = Quaternion.Euler(0, 90, 0);
@@ -48,13 +50,31 @@ public class FrogMovement : MonoBehaviour
 			targetPosition += new Vector3(0, 0, MovementAmount);
 			targetRotation = Quaternion.Euler(0, 180, 0);
 		}
+		
+		//if (parent != null && this.gameObject.transform.IsChildOf(parent))
+		//{
+		//	targetPosition = this.gameObject.transform.position;
+		//}
 	}
 
     private void OnCollisionEnter(Collision other)
     {
+		if (other.gameObject.tag == "Log")
+		{
+			parent = other.gameObject.transform;
+		}
+
         if (other.gameObject.tag == "Car")
         {
 			targetPosition = new Vector3(0.3081f, 0.322f, 13.247f);
+		}
+	}
+
+	private void OnCollisionExit(Collision collision)
+	{
+		if (collision.gameObject.tag == "Log")
+		{
+			parent = null;
 		}
 	}
 }
