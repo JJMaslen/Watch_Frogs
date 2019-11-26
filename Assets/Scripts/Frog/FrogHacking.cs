@@ -28,7 +28,17 @@ public class FrogHacking : MonoBehaviour
 				//car.transform.position + new Vector3(0, 4, 0) +
 				arrowObj.transform.position = car.transform.position + new Vector3(0, 3, 0);
 				targetCar = car;
+
+				if (targetCar == null)
+				{
+					arrowObj.transform.position = new Vector3(999, 999, 999);
+				}
 			}
+		}
+
+		if (targetCar == null)
+		{
+			arrowObj.transform.position = new Vector3(999, 999, 999);
 		}
 
 		if (Input.GetKeyDown(KeyCode.Space))
