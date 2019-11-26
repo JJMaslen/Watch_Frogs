@@ -22,7 +22,7 @@ public class ArrowAnimation : MonoBehaviour
 		rotate += 1;
 
 		currentPosition = Arrow.transform.position;
-		Arrow.transform.position = new Vector3(currentPosition.x, bob, currentPosition.z);
+		Arrow.transform.position = new Vector3(currentPosition.x, currentPosition.y + bob, currentPosition.z);
 		Arrow.transform.rotation = Quaternion.Euler(-90, rotate, 0);
     }
 }
