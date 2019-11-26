@@ -29,28 +29,40 @@ public class FrogMovement : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.S))
 		{
+			gameObject.transform.parent = null;
 			targetPosition += new Vector3(-MovementAmount, 0, 0);
 			targetRotation = Quaternion.Euler(0, 90, 0);
 		}
 
 		if (Input.GetKeyDown(KeyCode.W))
 		{
+			gameObject.transform.parent = null;
 			targetPosition += new Vector3(MovementAmount, 0, 0);
 			targetRotation = Quaternion.Euler(0, -90, 0);
 		}
 
 		if (Input.GetKeyDown(KeyCode.D))
 		{
+			gameObject.transform.parent = null;
 			targetPosition += new Vector3(0, 0, -MovementAmount);
 			targetRotation = Quaternion.Euler(0, 0, 0);
 		}
 
 		if (Input.GetKeyDown(KeyCode.A))
 		{
+			gameObject.transform.parent = null;
 			targetPosition += new Vector3(0, 0, MovementAmount);
 			targetRotation = Quaternion.Euler(0, 180, 0);
 		}
-		
+
+		if (gameObject.transform.parent != null)
+		{
+			if (gameObject.transform.parent.tag == "Log")
+			{
+				targetPosition = new Vector3(gameObject.transform.parent.position.x, 0.5f, gameObject.transform.parent.position.z);
+			}
+		}
+
 		//if (parent != null && this.gameObject.transform.IsChildOf(parent))
 		//{
 		//	targetPosition = this.gameObject.transform.position;

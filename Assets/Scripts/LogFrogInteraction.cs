@@ -23,17 +23,17 @@ public class LogFrogInteraction : MonoBehaviour
 
 	private void OnCollisionEnter(Collision collision)
 	{
-		if (collision.gameObject.tag == "Frog")
-		{
-			print("Enter");
-			//tempParent = collision.gameObject.transform.parent;
-			collision.gameObject.transform.parent = this.gameObject.transform;// Log.transform;
-		}
+		//if (collision.gameObject.tag == "Frog")
+		//{
+		//	print("Enter");
+		//	//tempParent = collision.gameObject.transform.parent;
+		//	collision.gameObject.transform.parent = this.gameObject.transform;// Log.transform;
+		//}
 	}
 
-	private void OnCollisionExit(Collision collision)
-	{
-		print("Exit");
-		collision.gameObject.transform.parent = null;
-	}
+	//private void OnCollisionExit(Collision collision)
+	//{
+	//	print("Exit");
+	//	collision.gameObject.transform.parent = null;
+	//}
 }
