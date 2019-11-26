@@ -4,17 +4,11 @@ using UnityEngine;
 
 public class CarHacked : MonoBehaviour
 {
-	//public bool toggle = false;
-	//public void Update()
-	//{
-	//	if (toggle)
-	//	{
-	//		flip();
-	//	}
-	//}
 	public void Flip()
 	{
-		this.gameObject.transform.rotation = new Quaternion(this.gameObject.transform.rotation.x, 0f, this.gameObject.transform.rotation.z, this.gameObject.transform.rotation.w);
-		//toggle = !toggle;
+		transform.Rotate(0, 180, 0);
+		//transform.rotation = Quaternion.Euler(gameObject.transform.rotation.x, gameObject.transform.rotation.y + 180, gameObject.transform.rotation.z);
+
+		Debug.Log("flipped");
 	}
 }

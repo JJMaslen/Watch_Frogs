@@ -7,6 +7,9 @@ public class FrogHacking : MonoBehaviour
 	public GameObject arrowObj;
 	public float MinimumDistance = 5.0f;
 
+	GameObject targetCar;
+	public GameObject empty;
+
     void Start()
     {
         
@@ -23,8 +26,14 @@ public class FrogHacking : MonoBehaviour
 			if (dist < MinimumDistance)
 			{
 				//car.transform.position + new Vector3(0, 4, 0) +
-				arrowObj.transform.position = car.transform.position + new Vector3(0, 3, 0);
+				arrowObj.transform.position = car.transform.position + new Vector3(0, 4, 0);
+				targetCar = car;
 			}
+		}
+
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			targetCar.GetComponent<CarHacked>().Flip();
 		}
 
 	}
