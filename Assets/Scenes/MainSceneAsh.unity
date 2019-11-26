@@ -261,6 +261,26 @@ PrefabInstance:
       propertyPath: MovementAmount
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7383538272838843305, guid: 7ab306a46c24cff418ec020e4270b57d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 18.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7383538272838843305, guid: 7ab306a46c24cff418ec020e4270b57d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7383538272838843305, guid: 7ab306a46c24cff418ec020e4270b57d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -9.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2525723612904357219, guid: 7ab306a46c24cff418ec020e4270b57d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ab306a46c24cff418ec020e4270b57d, type: 3}
 --- !u!1001 &638623274
@@ -540,6 +560,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6fe3957d16e52942aca9debbf3b2556, type: 3}
+--- !u!1 &1082624220 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5777204801391135162, guid: 7ab306a46c24cff418ec020e4270b57d,
+    type: 3}
+  m_PrefabInstance: {fileID: 477062670}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1084557420 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6679267010004535772, guid: 7ab306a46c24cff418ec020e4270b57d,
+    type: 3}
+  m_PrefabInstance: {fileID: 477062670}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1084557421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084557420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60616f4b889e1a74197a332a425cb980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrowObj: {fileID: 1082624220}
+  MinimumDistance: 10
+  empty: {fileID: 0}
 --- !u!1 &1151612454
 GameObject:
   m_ObjectHideFlags: 0

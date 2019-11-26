@@ -27,7 +27,7 @@ public class LogFrogInteraction : MonoBehaviour
 		{
 			print("Enter");
 			//tempParent = collision.gameObject.transform.parent;
-			collision.gameObject.transform.parent = Log.transform;
+			collision.gameObject.transform.parent = this.gameObject.transform;// Log.transform;
 		}
 	}
 

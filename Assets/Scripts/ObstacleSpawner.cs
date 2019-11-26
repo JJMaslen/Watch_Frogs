@@ -18,7 +18,7 @@ public class ObstacleSpawner : MonoBehaviour
     {
 		if (spawncaprand)
 		{
-			spawncap = Random.Range(0, 1);
+			spawncap = Random.Range(0, 2);
 		}
 
         call = true;
