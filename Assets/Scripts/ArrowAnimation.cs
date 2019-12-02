@@ -18,7 +18,7 @@ public class ArrowAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		bob = (Mathf.Sin(Time.fixedTime) / 20);
+		bob = (Mathf.Sin(Time.fixedTime) / 100);
 		rotate += 1;
 
 		currentPosition = Arrow.transform.position;
