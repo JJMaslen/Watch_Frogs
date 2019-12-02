@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FrogMovement : MonoBehaviour
 {
@@ -11,8 +9,10 @@ public class FrogMovement : MonoBehaviour
 
 	public float RotationSpeed = 0.1f;
 
-	private Vector3 targetPosition;
-	private Quaternion targetRotation;
+	public Vector3 targetPosition;
+	public Quaternion targetRotation;
+
+	public bool shouldMove = true;
 
 
 	private Transform parent;
@@ -24,8 +24,11 @@ public class FrogMovement : MonoBehaviour
 
     void Update()
     {
-		transform.position = Vector3.Lerp(transform.position, targetPosition, MovementSpeed);
-		transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, RotationSpeed);
+		if (shouldMove)
+		{
+			transform.position = Vector3.Lerp(transform.position, targetPosition, MovementSpeed);
+			transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, RotationSpeed);
+		}
 
 		if (Input.GetKeyDown(KeyCode.S))
 		{
@@ -54,28 +57,10 @@ public class FrogMovement : MonoBehaviour
 			targetPosition += new Vector3(0, 0, MovementAmount);
 			targetRotation = Quaternion.Euler(0, 180, 0);
 		}
-
-		if (gameObject.transform.parent != null)
-		{
-			if (gameObject.transform.parent.tag == "Log")
-			{
-				targetPosition = new Vector3(gameObject.transform.parent.position.x, 0.5f, gameObject.transform.parent.position.z);
-			}
-		}
-
-		//if (parent != null && this.gameObject.transform.IsChildOf(parent))
-		//{
-		//	targetPosition = this.gameObject.transform.position;
-		//}
 	}
 
     private void OnCollisionEnter(Collision other)
     {
-		if (other.gameObject.tag == "Log")
-		{
-			parent = other.gameObject.transform;
-		}
-
         if (other.gameObject.tag == "Car")
         {
 			targetPosition = new Vector3(0.3081f, 0.322f, 13.247f);
@@ -84,9 +69,6 @@ public class FrogMovement : MonoBehaviour
 
 	private void OnCollisionExit(Collision collision)
 	{
-		if (collision.gameObject.tag == "Log")
-		{
-			parent = null;
-		}
+
 	}
 }
