@@ -105,6 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1bd49b5471b5724f84243a6241b361c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: Car
 --- !u!1 &1783038621793485876
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,13 +129,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1783038621793485876}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5965097783662149623}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &5965097782234283905
 GameObject:
   m_ObjectHideFlags: 0
@@ -158,13 +159,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5965097782234283905}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5965097783662149623}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &5965097782511843250
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,13 +189,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5965097782511843250}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5965097783662149623}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!1 &5965097783662149625
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,11 +243,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 905cdb1d1d49a764cbd6b288f8aab3ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obst: {fileID: 2686969921951362687, guid: 1d1b08f0414a2914697257bf84cb81c7, type: 3}
+  spawncaprand: 0
+  obst:
+  - {fileID: 2686969921951362687, guid: 1d1b08f0414a2914697257bf84cb81c7, type: 3}
+  - {fileID: 2822134449229660866, guid: 41e936c9243439a4db662fade730966a, type: 3}
   spawns:
   - {fileID: 5965097782234283966}
   - {fileID: 5965097782511843251}
   - {fileID: 5754028490192428464}
-  spawncap: 1
+  spawncap: 0
   limitless: 1
   aschild: 0
+  offset: {x: 0, y: 0, z: 0}
