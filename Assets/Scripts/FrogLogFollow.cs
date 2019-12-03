@@ -18,10 +18,7 @@ public class FrogLogFollow : MonoBehaviour
 
 	private void OnCollisionEnter(Collision collision)
 	{
-		if (collision.gameObject.tag == "Log")
-		{
-			this.gameObject.transform.parent = collision.gameObject.transform;
-		}
+
 	}
 
 	private void OnCollisionExit(Collision collision)
