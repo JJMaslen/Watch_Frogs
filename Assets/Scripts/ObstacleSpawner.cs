@@ -5,7 +5,7 @@ using UnityEngine;
 public class ObstacleSpawner : MonoBehaviour
 {
 	public bool spawncaprand = false;
-    public GameObject obst;
+    public GameObject [] obst;
     public Transform [] spawns;
     private bool nsc, call; //no spawnables catcher
 	public int spawncap = 0;
@@ -22,7 +22,20 @@ public class ObstacleSpawner : MonoBehaviour
 		}
 
         call = true;
-        if (obst == null)
+        int temp = 0;
+        foreach (GameObject item in obst)
+        {
+            if (item == null)
+            {
+                continue;
+            }
+            else
+            {
+                temp++;
+            }
+        }
+
+        if (temp != obst.Length)
         {
             nsc = true;
         }
@@ -30,6 +43,7 @@ public class ObstacleSpawner : MonoBehaviour
         {
             nsc = false;
         }
+
 
         //for (int i = 0; i < ; i++)
         //{
@@ -93,11 +107,11 @@ public class ObstacleSpawner : MonoBehaviour
 		
 		if (aschild)
 		{
-			Instantiate(obst, temp);
+			Instantiate(obst[Random.Range(0,obst.Length)], temp);
 		}
 		else
 		{
-			Instantiate(obst, temp.position, temp.rotation);
+			Instantiate(obst[Random.Range(0, obst.Length)], temp.position, temp.rotation);
 		}
         call = true;
     }

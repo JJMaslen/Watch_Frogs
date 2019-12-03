@@ -321,6 +321,21 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!65 &122278372
 BoxCollider:
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 250958548}
+  - component: {fileID: 250958547}
+  - component: {fileID: 250958546}
+  - component: {fileID: 250958545}
+  m_Layer: 5
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &250958545
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
