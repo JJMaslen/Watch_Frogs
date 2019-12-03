@@ -2,6 +2,7 @@
 
 public class FrogMovement : MonoBehaviour
 {
+	public int lives = 5;
 	[Range(1, 5)]
 	public float MovementAmount = 1.0f;
 
@@ -81,6 +82,10 @@ public class FrogMovement : MonoBehaviour
     {
         if (other.gameObject.tag == "Car")
         {
+			if (lives >= 0)
+			{
+				lives--;
+			}
 			targetPosition = new Vector3(0.3081f, 0.322f, 13.247f);
 		}
 
