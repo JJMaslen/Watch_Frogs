@@ -1461,11 +1461,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7079909400856380716, guid: 3a381019f7c3c374086516518c0901c2,
-        type: 3}
-      propertyPath: m_Name
-      value: GroundTile
-      objectReference: {fileID: 0}
     - target: {fileID: 6060646416561780543, guid: 3a381019f7c3c374086516518c0901c2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1520,6 +1515,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7079909400856380716, guid: 3a381019f7c3c374086516518c0901c2,
+        type: 3}
+      propertyPath: m_Name
+      value: GroundTile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a381019f7c3c374086516518c0901c2, type: 3}

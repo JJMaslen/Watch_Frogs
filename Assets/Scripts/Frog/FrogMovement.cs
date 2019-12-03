@@ -70,7 +70,12 @@ public class FrogMovement : MonoBehaviour
 			targetPosition = other.gameObject.transform.position + new Vector3(0, 0.8f, 0);
 			shouldParent = true;
 		}
-	}
+
+        if (other.gameObject.tag == "River")
+        {
+            targetPosition = new Vector3(0.3081f, 0.322f, 13.247f);
+        }
+    }
 
     private void OnTriggerStay(Collider other)
     {
