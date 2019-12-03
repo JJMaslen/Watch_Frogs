@@ -20,16 +20,20 @@ public class WinScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Frog")
-        {
-            SceneManager.LoadScene(scenename, LoadSceneMode.Single);
-        }
+		LoadScene(other.gameObject);
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Frog")
-        {
-            SceneManager.LoadScene(scenename, LoadSceneMode.Single);
-        }
-    }
+		LoadScene(collision.gameObject);
+
+	}
+
+	private void LoadScene(GameObject coll)
+	{
+		if(coll.tag == "Frog")
+		{
+			PlayerPrefs.SetString("endText", "Level Complete");
+			SceneManager.LoadScene(scenename, LoadSceneMode.Single);
+		}
+	}
 }
