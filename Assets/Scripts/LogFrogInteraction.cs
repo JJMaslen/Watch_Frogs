@@ -25,11 +25,7 @@ public class LogFrogInteraction : MonoBehaviour
 	{
 		if (collision.gameObject.tag == "Frog")
 		{
-			Frog = collision.collider.gameObject;
 
-			Frog.transform.parent = transform;
-			Frog.GetComponent<Rigidbody>().isKinematic = true;
-			Frog.GetComponent<FrogMovement>().shouldMove = false;
 		}
 	}
 
