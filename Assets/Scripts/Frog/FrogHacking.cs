@@ -13,7 +13,7 @@ public class FrogHacking : MonoBehaviour
 
 	public int MaxHackingUses = 5;
 	public int HackingUses = 5;
-
+	
 	public Text text;
 
     void Start()

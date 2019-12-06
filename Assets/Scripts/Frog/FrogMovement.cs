@@ -80,7 +80,7 @@ public class FrogMovement : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Car")
+        if (other.gameObject.tag == "Car" || other.gameObject.tag == "Enemy")
         {
 			if (lives >= 0)
 			{
@@ -88,7 +88,7 @@ public class FrogMovement : MonoBehaviour
 			}
 
 			gameObject.GetComponent<FrogHacking>().HackingUses = gameObject.GetComponent<FrogHacking>().MaxHackingUses;
-			targetPosition = new Vector3(0.3081f, 0.322f, 13.247f);
+			targetPosition = new Vector3(5.360525f, 0.339f, 0.7037842f);
 		}
 
 		if (other.gameObject.tag == "Log")
