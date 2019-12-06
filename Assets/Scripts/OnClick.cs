@@ -17,6 +17,6 @@ public class OnClick : MonoBehaviour
 
 	public void Restart()
 	{
-		SceneManager.LoadScene("MainScene", LoadSceneMode.Single);
+		SceneManager.LoadScene("FinalLevel", LoadSceneMode.Single);
 	}
 }
