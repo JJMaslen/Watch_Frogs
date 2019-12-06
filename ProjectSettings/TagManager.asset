@@ -8,6 +8,8 @@ TagManager:
   - Car
   - Frog
   - Log
+  - River
+  - Enemy
   layers:
   - Default
   - TransparentFX
