@@ -9,6 +9,8 @@ public class EnemyAI : MonoBehaviour
     public Vector3 targetPosition;
     public Quaternion targetRotation;
 
+	public bool IsActive;
+
     void Start()
     {
         targetPosition = transform.position;
@@ -22,37 +24,48 @@ public class EnemyAI : MonoBehaviour
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 0.4f);
     }
 
-    IEnumerator MoveX()
+	private void OnTriggerEnter(Collider other)
+	{
+		Destroy(gameObject);
+	}
+
+	IEnumerator MoveX()
     {
-        if (targetPosition.x > Frog.transform.position.x)
-        {
-            targetPosition -= new Vector3(2.0f, 0, 0);
-            targetRotation = Quaternion.Euler(0, 90, 0);
-        }
-        else
-        {
-            targetPosition += new Vector3(2.0f, 0, 0);
-            targetRotation = Quaternion.Euler(0, -90, 0);
-        }
-        yield return new WaitForSeconds(0.5f);
-        StartCoroutine("MoveZ");
+		if (IsActive)
+		{
+			if (targetPosition.x > Frog.transform.position.x)
+			{
+				targetPosition -= new Vector3(2.0f, 0, 0);
+				targetRotation = Quaternion.Euler(0, 90, 0);
+			}
+			else
+			{
+				targetPosition += new Vector3(2.0f, 0, 0);
+				targetRotation = Quaternion.Euler(0, -90, 0);
+			}
+		}
+		yield return new WaitForSeconds(0.5f);
+		StartCoroutine("MoveZ");
     }
 
     IEnumerator MoveZ()
     {
-        if (targetPosition.z > Frog.transform.position.z)
-        {
-            targetPosition -= new Vector3(0.0f, 0.0f, 2.0f);
-            targetRotation = Quaternion.Euler(0, 0, 0);
-        }
-        else
-        {
-            targetPosition += new Vector3(0.0f, 0.0f, 2.0f);
-            targetRotation = Quaternion.Euler(0, 180, 0);
-        }
+		if (IsActive)
+		{
+			if (targetPosition.z > Frog.transform.position.z)
+			{
+				targetPosition -= new Vector3(0.0f, 0.0f, 2.0f);
+				targetRotation = Quaternion.Euler(0, 0, 0);
+			}
+			else
+			{
+				targetPosition += new Vector3(0.0f, 0.0f, 2.0f);
+				targetRotation = Quaternion.Euler(0, 180, 0);
+			}
+		}
 
-        yield return new WaitForSeconds(0.5f);
-        StartCoroutine("MoveX");
+		yield return new WaitForSeconds(0.5f);
+		StartCoroutine("MoveX");
     }
 
 
