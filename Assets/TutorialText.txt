@@ -1,0 +1,12 @@
+How to play:
+
+The objective of the game is to get Froggy (You!) from one end of the level to the other. The only problem is the many dangerous hazards that lay in your way. Motorways, rivers and enemy frogs are between you and the end goal. Luckily, you have the ability to hack!
+
+Just be aware when you do hack, the other frogs won't be too happy about it, and will chase you down. It's a good thing they are not the smartest, so you can outrun them by crossing either a road or river. Most of the time.
+
+
+Controls:
+
+To move Frogg, use the W,A,S,D keys on the keyboard
+To hack a car, use the Space key, this will cause the car you are currently selecting to switch directions and crash into the car behind it. An arrow above the closest car to you will indcate which car you're going to hack.
+You can move the camera left and right with the use of the mouse.
