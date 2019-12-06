@@ -13,6 +13,8 @@ public class ObstacleSpawner : MonoBehaviour
 	//int spawncount = 0;
 	public bool aschild = false;
 	public Vector3 offset;
+	public float delmax = 2;
+	public float delmin = 0.5f;
 	// Start is called before the first frame update
 	void Start()
     {
@@ -85,7 +87,7 @@ public class ObstacleSpawner : MonoBehaviour
     IEnumerator Delay()
     {
         call = false;
-		float secs = Random.Range(0.5f, 2);
+		float secs = Random.Range(delmin, delmax);
 		if (spawncaprand)
 		{
 			yield return new WaitForSeconds(0);
