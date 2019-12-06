@@ -246,7 +246,6 @@ MonoBehaviour:
   spawncaprand: 0
   obst:
   - {fileID: 2686969921951362687, guid: 1d1b08f0414a2914697257bf84cb81c7, type: 3}
-  - {fileID: 2822134449229660866, guid: 41e936c9243439a4db662fade730966a, type: 3}
   spawns:
   - {fileID: 5965097782234283966}
   - {fileID: 5965097782511843251}
