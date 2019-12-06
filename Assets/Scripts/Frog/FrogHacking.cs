@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FrogHacking : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class FrogHacking : MonoBehaviour
 	GameObject targetCar;
 	public GameObject empty;
 
+	public int MaxHackingUses = 5;
+	public int HackingUses = 5;
+
+	public Text text;
+
     void Start()
     {
         
@@ -17,6 +23,8 @@ public class FrogHacking : MonoBehaviour
 
     void Update()
     {
+		text.text = HackingUses + "/" + MaxHackingUses;
+			
 		var cars = GameObject.FindGameObjectsWithTag("Car");
 
 		foreach(var car in cars)
@@ -43,7 +51,24 @@ public class FrogHacking : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
-			targetCar.GetComponent<CarHacked>().Flip();
+			if (HackingUses > 0)
+			{
+				targetCar.GetComponent<CarHacked>().Flip();
+				HackingUses -= 1;
+
+				var enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+				foreach (var enemy in enemies)
+				{
+					float dist = Vector3.Distance(enemy.transform.position, transform.position);
+
+					if (dist < 15.0f)
+					{
+						enemy.GetComponent<EnemyAI>().IsActive = true;
+					}
+				}
+			}
+
 		}
 
 	}

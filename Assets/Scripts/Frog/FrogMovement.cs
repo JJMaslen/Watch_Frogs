@@ -86,6 +86,8 @@ public class FrogMovement : MonoBehaviour
 			{
 				lives--;
 			}
+
+			gameObject.GetComponent<FrogHacking>().HackingUses = gameObject.GetComponent<FrogHacking>().MaxHackingUses;
 			targetPosition = new Vector3(0.3081f, 0.322f, 13.247f);
 		}
 
