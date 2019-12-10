@@ -10,7 +10,6 @@ TagManager:
   - Log
   - River
   - Enemy
-  - Bush
   layers:
   - Default
   - TransparentFX
