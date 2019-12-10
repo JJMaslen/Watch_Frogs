@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 7662724789266348829}
   - component: {fileID: 3956115876443650498}
   - component: {fileID: 3956115876443650501}
-  - component: {fileID: -6530359220918589140}
   - component: {fileID: 5894545929828020968}
   m_Layer: 0
   m_Name: Frog
@@ -152,18 +151,6 @@ MonoBehaviour:
   MaxHackingUses: 5
   HackingUses: 5
   text: {fileID: 0}
---- !u!114 &-6530359220918589140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3728004735436223374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e270b30f8549f3047b15030b453b1a1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &5894545929828020968
 AudioSource:
   m_ObjectHideFlags: 0

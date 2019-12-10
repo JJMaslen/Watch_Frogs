@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4833281078406184669}
   - component: {fileID: 1166373905872421412}
   - component: {fileID: 7332417724837772310}
-  - component: {fileID: 6407992058497591085}
   - component: {fileID: 7509335785550237440}
   - component: {fileID: 7643845598890007538}
   m_Layer: 0
@@ -98,21 +97,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.9999999, y: 2, z: 4}
   m_Center: {x: 0.000000059604645, y: -0.000000059604645, z: 2.1175824e-22}
---- !u!114 &6407992058497591085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 581840592021862136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5e4b75b3b20b274e9fa9ccd6bec75a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Log: {fileID: 581840592021862136}
-  Frog: {fileID: 3728004735436223374, guid: 105c0590c79d7074b8d8c2b2d475ee81, type: 3}
-  frogIsOnLog: 0
 --- !u!114 &7509335785550237440
 MonoBehaviour:
   m_ObjectHideFlags: 0
