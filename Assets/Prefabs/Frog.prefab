@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -6530359220918589140}
   m_Layer: 0
   m_Name: Frog
-  m_TagString: Untagged
+  m_TagString: Frog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -92,7 +92,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3728004735436223374}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.2, y: 0.5, z: 1.2}
@@ -109,9 +109,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30ca0f6162e38ea4ab72a2027e5f4a08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lives: 5
   MovementAmount: 3
   MovementSpeed: 0.4
   RotationSpeed: 0.4
+  targetPosition: {x: 0, y: 0, z: 0}
+  targetRotation: {x: 0, y: 0, z: 0, w: 0}
+  shouldMove: 1
+  shouldParent: 0
 --- !u!54 &3956115876443650498
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -143,6 +148,9 @@ MonoBehaviour:
   arrowObj: {fileID: 0}
   MinimumDistance: 10
   empty: {fileID: 0}
+  MaxHackingUses: 5
+  HackingUses: 5
+  text: {fileID: 0}
 --- !u!114 &-6530359220918589140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,6 +170,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 425538861254345117}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: b0c34480df1f2514780a2483945d77fc,
+        type: 3}
+      propertyPath: m_Name
+      value: ExFrog
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: b0c34480df1f2514780a2483945d77fc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -216,11 +229,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: b0c34480df1f2514780a2483945d77fc,
-        type: 3}
-      propertyPath: m_Name
-      value: ExFrog
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0c34480df1f2514780a2483945d77fc, type: 3}
