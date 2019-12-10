@@ -11,11 +11,14 @@ public class EnemyAI : MonoBehaviour
 
 	public bool IsActive;
 
+    AudioSource audioFrogIdle;
+
     void Start()
     {
         targetPosition = transform.position;
 
         StartCoroutine("MoveX");
+        audioFrogIdle = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -24,7 +27,16 @@ public class EnemyAI : MonoBehaviour
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 0.4f);
     }
 
-	private void OnTriggerEnter(Collider other)
+    private void FixedUpdate()
+    {
+        float idleSound = Random.Range(0.0f, 1.0f);
+        if (idleSound > 0.9995)
+        {
+            audioFrogIdle.Play();
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
 	{
 		Destroy(gameObject);
 	}

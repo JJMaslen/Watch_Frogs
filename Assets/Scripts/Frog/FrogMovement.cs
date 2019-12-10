@@ -17,23 +17,29 @@ public class FrogMovement : MonoBehaviour
 	public bool shouldParent = false;
 
 	private Transform parent;
+
+    AudioSource audioFrogMove;
+
     void Start()
     {
 		targetPosition = transform.position;
 		targetRotation = transform.rotation;
+        audioFrogMove = GetComponent<AudioSource>();
     }
 
     void Update()
     {
-		if (shouldMove)
+        if (shouldMove)
 		{
 			transform.position = Vector3.Lerp(transform.position, targetPosition, MovementSpeed);
 			transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, RotationSpeed);
+            
 		}
 
 		if (Input.GetKeyDown(KeyCode.S))
 		{
-			shouldParent = false;
+            audioFrogMove.Play();
+            shouldParent = false;
 			gameObject.transform.parent = null;
 
             if (targetPosition.x > -9)
@@ -43,7 +49,8 @@ public class FrogMovement : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.W))
 		{
-			shouldParent = false;
+            audioFrogMove.Play();
+            shouldParent = false;
 			gameObject.transform.parent = null;
 
             if (targetPosition.x < 228)
@@ -53,7 +60,8 @@ public class FrogMovement : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.D))
 		{
-			shouldParent = false;
+            audioFrogMove.Play();
+            shouldParent = false;
 			gameObject.transform.parent = null;
 
             if (targetPosition.z > -20)
@@ -64,7 +72,8 @@ public class FrogMovement : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.A))
 		{
-			shouldParent = false;
+            audioFrogMove.Play();
+            shouldParent = false;
 			gameObject.transform.parent = null;
 
             if (targetPosition.z < 20)
