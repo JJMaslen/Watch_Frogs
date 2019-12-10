@@ -24,7 +24,7 @@ public class ObstacleSpawner : MonoBehaviour
     {
         if (!nsc)
         {
-
+            Instantiate(obst, this.gameObject.transform);
         }
     }
 }
