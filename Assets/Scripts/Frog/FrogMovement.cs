@@ -41,6 +41,8 @@ public class FrogMovement : MonoBehaviour
             audioFrogMove.Play();
             shouldParent = false;
 			gameObject.transform.parent = null;
+
+            if (targetPosition.x > -9)
 			targetPosition += new Vector3(-MovementAmount, 0, 0);
 			targetRotation = Quaternion.Euler(0, 90, 0);
 		}
@@ -50,7 +52,9 @@ public class FrogMovement : MonoBehaviour
             audioFrogMove.Play();
             shouldParent = false;
 			gameObject.transform.parent = null;
-			targetPosition += new Vector3(MovementAmount, 0, 0);
+
+            if (targetPosition.x < 228)
+            targetPosition += new Vector3(MovementAmount, 0, 0);
 			targetRotation = Quaternion.Euler(0, -90, 0);
 		}
 
@@ -59,7 +63,10 @@ public class FrogMovement : MonoBehaviour
             audioFrogMove.Play();
             shouldParent = false;
 			gameObject.transform.parent = null;
-			targetPosition += new Vector3(0, 0, -MovementAmount);
+
+            if (targetPosition.z > -20)
+                targetPosition += new Vector3(0, 0, -MovementAmount);
+
 			targetRotation = Quaternion.Euler(0, 0, 0);
 		}
 
@@ -68,7 +75,10 @@ public class FrogMovement : MonoBehaviour
             audioFrogMove.Play();
             shouldParent = false;
 			gameObject.transform.parent = null;
-			targetPosition += new Vector3(0, 0, MovementAmount);
+
+            if (targetPosition.z < 20)
+                targetPosition += new Vector3(0, 0, MovementAmount);
+
 			targetRotation = Quaternion.Euler(0, 180, 0);
 		}
 	}
@@ -109,10 +119,13 @@ public class FrogMovement : MonoBehaviour
 		}
 	}
 
-	private void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
-
-	}
+        if (other.gameObject.tag == "Log")
+        {
+            targetPosition = new Vector3(targetPosition.x, 0.339f, targetPosition.z);
+        }
+    }
 
 	private void OnCollisionExit(Collision collision)
 	{
