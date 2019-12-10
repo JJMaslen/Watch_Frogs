@@ -22,16 +22,18 @@ public class WinScript : MonoBehaviour
     {
 		LoadScene(other.gameObject);
     }
-    private void OnCollisionEnter(Collision collision)
-    {
-		LoadScene(collision.gameObject);
 
-	}
+ //   private void OnCollisionEnter(Collision collision)
+ //   {
+	//	LoadScene(collision.gameObject);
+
+	//}
 
 	private void LoadScene(GameObject coll)
 	{
 		if(coll.tag == "Frog")
 		{
+            print("LoadScene called");
 			PlayerPrefs.SetString("endText", "Level Complete");
 			SceneManager.LoadScene(scenename, LoadSceneMode.Single);
 		}

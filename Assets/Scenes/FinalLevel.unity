@@ -3757,11 +3757,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: RiverTile (2)
       objectReference: {fileID: 0}
+
     - target: {fileID: 8892292328497574051, guid: 10b4feb7d225a2548a2dee15949fa4d7,
         type: 3}
       propertyPath: m_Center.z
       value: 0.2
       objectReference: {fileID: 0}
+
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10b4feb7d225a2548a2dee15949fa4d7, type: 3}
 --- !u!1001 &772778391
@@ -6210,6 +6212,7 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+
     - target: {fileID: 8892292328497574051, guid: 10b4feb7d225a2548a2dee15949fa4d7,
         type: 3}
       propertyPath: m_Center.z
@@ -7903,6 +7906,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1872307068}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1800895957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800895956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f237d086b3274f84abfb06d5dfd1d6e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1800895956}
 --- !u!1001 &1833755502
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8125,6 +8141,11 @@ PrefabInstance:
     - target: {fileID: 3728004735436223374, guid: 105c0590c79d7074b8d8c2b2d475ee81,
         type: 3}
       propertyPath: m_Name
+      value: Frog
+      objectReference: {fileID: 0}
+    - target: {fileID: 3728004735436223374, guid: 105c0590c79d7074b8d8c2b2d475ee81,
+        type: 3}
+      propertyPath: m_TagString
       value: Frog
       objectReference: {fileID: 0}
     - target: {fileID: 425538861254345117, guid: 105c0590c79d7074b8d8c2b2d475ee81,
@@ -9577,12 +9598,12 @@ PrefabInstance:
     - target: {fileID: 6924559706896654844, guid: c5c758deb63e341429e834f5fa734687,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.65
+      value: 2.64
       objectReference: {fileID: 0}
     - target: {fileID: 6924559706896654844, guid: c5c758deb63e341429e834f5fa734687,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 6924559706896654844, guid: c5c758deb63e341429e834f5fa734687,
         type: 3}
@@ -9628,6 +9649,11 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1353985800, guid: c5c758deb63e341429e834f5fa734687, type: 3}
+      propertyPath: scenename
+      value: EndScene
+      objectReference: {fileID: 0}
+
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5c758deb63e341429e834f5fa734687, type: 3}
 --- !u!1001 &4966037869268796073
