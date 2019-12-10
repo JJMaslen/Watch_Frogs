@@ -17,49 +17,68 @@ public class FrogMovement : MonoBehaviour
 	public bool shouldParent = false;
 
 	private Transform parent;
+
+    AudioSource audioFrogMove;
+
     void Start()
     {
 		targetPosition = transform.position;
 		targetRotation = transform.rotation;
+        audioFrogMove = GetComponent<AudioSource>();
     }
 
     void Update()
     {
-		if (shouldMove)
+        if (shouldMove)
 		{
 			transform.position = Vector3.Lerp(transform.position, targetPosition, MovementSpeed);
 			transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, RotationSpeed);
+            
 		}
 
 		if (Input.GetKeyDown(KeyCode.S))
 		{
-			shouldParent = false;
+            audioFrogMove.Play();
+            shouldParent = false;
 			gameObject.transform.parent = null;
+
+            if (targetPosition.x > -9)
 			targetPosition += new Vector3(-MovementAmount, 0, 0);
 			targetRotation = Quaternion.Euler(0, 90, 0);
 		}
 
 		if (Input.GetKeyDown(KeyCode.W))
 		{
-			shouldParent = false;
+            audioFrogMove.Play();
+            shouldParent = false;
 			gameObject.transform.parent = null;
-			targetPosition += new Vector3(MovementAmount, 0, 0);
+
+            if (targetPosition.x < 228)
+            targetPosition += new Vector3(MovementAmount, 0, 0);
 			targetRotation = Quaternion.Euler(0, -90, 0);
 		}
 
 		if (Input.GetKeyDown(KeyCode.D))
 		{
-			shouldParent = false;
+            audioFrogMove.Play();
+            shouldParent = false;
 			gameObject.transform.parent = null;
-			targetPosition += new Vector3(0, 0, -MovementAmount);
+
+            if (targetPosition.z > -20)
+                targetPosition += new Vector3(0, 0, -MovementAmount);
+
 			targetRotation = Quaternion.Euler(0, 0, 0);
 		}
 
 		if (Input.GetKeyDown(KeyCode.A))
 		{
-			shouldParent = false;
+            audioFrogMove.Play();
+            shouldParent = false;
 			gameObject.transform.parent = null;
-			targetPosition += new Vector3(0, 0, MovementAmount);
+
+            if (targetPosition.z < 20)
+                targetPosition += new Vector3(0, 0, MovementAmount);
+
 			targetRotation = Quaternion.Euler(0, 180, 0);
 		}
 	}
@@ -100,10 +119,13 @@ public class FrogMovement : MonoBehaviour
 		}
 	}
 
-	private void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
-
-	}
+        if (other.gameObject.tag == "Log")
+        {
+            targetPosition = new Vector3(targetPosition.x, 0.339f, targetPosition.z);
+        }
+    }
 
 	private void OnCollisionExit(Collision collision)
 	{
