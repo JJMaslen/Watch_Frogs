@@ -75,19 +75,6 @@ public class FrogMovement : MonoBehaviour
         if (other.gameObject.tag == "River")
         {
             targetPosition = new Vector3(0.3081f, 0.322f, 13.247f);
-            if (lives >= 0)
-            {
-                lives--;
-            }
-        }
-
-        if (other.gameObject.tag == "Bush")
-        {
-            targetPosition = new Vector3(0.3081f, 0.322f, 13.247f);
-            if (lives >= 0)
-            {
-                lives--;
-            }
         }
     }
 
