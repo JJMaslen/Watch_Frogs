@@ -45,6 +45,8 @@ public class FrogMovement : MonoBehaviour
 		{
 			shouldParent = false;
 			gameObject.transform.parent = null;
+
+            if (targetPosition.x < 228)
             targetPosition += new Vector3(MovementAmount, 0, 0);
 			targetRotation = Quaternion.Euler(0, -90, 0);
 		}
