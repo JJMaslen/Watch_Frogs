@@ -100,10 +100,13 @@ public class FrogMovement : MonoBehaviour
 		}
 	}
 
-	private void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
-
-	}
+        if (other.gameObject.tag == "Log")
+        {
+            targetPosition = new Vector3(targetPosition.x, 0.339f, targetPosition.z);
+        }
+    }
 
 	private void OnCollisionExit(Collision collision)
 	{
