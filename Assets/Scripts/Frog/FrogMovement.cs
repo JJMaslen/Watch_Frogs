@@ -39,8 +39,7 @@ public class FrogMovement : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.S))
 		{
             audioFrogMove.Play();
-            shouldParent = !shouldParent;
-			gameObject.transform.parent = null;
+            shouldParent = false;
 
             if (targetPosition.x > -9)
 			targetPosition += new Vector3(-MovementAmount, 0, 0);
@@ -50,8 +49,7 @@ public class FrogMovement : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.W))
 		{
             audioFrogMove.Play();
-            shouldParent = !shouldParent;
-            gameObject.transform.parent = null;
+            shouldParent = false;
 
             if (targetPosition.x < 228)
             targetPosition += new Vector3(MovementAmount, 0, 0);
@@ -61,8 +59,7 @@ public class FrogMovement : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.D))
 		{
             audioFrogMove.Play();
-            shouldParent = !shouldParent;
-            gameObject.transform.parent = null;
+            shouldParent = false;
 
             if (targetPosition.z > -20)
                 targetPosition += new Vector3(0, 0, -MovementAmount);
@@ -73,8 +70,7 @@ public class FrogMovement : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.A))
 		{
             audioFrogMove.Play();
-            shouldParent = !shouldParent;
-            gameObject.transform.parent = null;
+            shouldParent = false;
 
             if (targetPosition.z < 20)
                 targetPosition += new Vector3(0, 0, MovementAmount);
@@ -90,10 +86,11 @@ public class FrogMovement : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
     {
-		if (other.gameObject.tag == "Log")
+		if (other.gameObject.tag == "Log" && parent != other.gameObject.transform)
 		{
 			targetPosition = other.gameObject.transform.position + new Vector3(0, 0.8f, 0);
 			shouldParent = true;
+            parent = other.gameObject.transform;
 		}
 
         if (other.gameObject.tag == "River" || other.gameObject.tag == "Bush")
@@ -131,7 +128,7 @@ public class FrogMovement : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Log")
+        if (other.gameObject.tag == "Log" && parent != other.gameObject.transform)
         {
             if (!shouldParent)
             {
