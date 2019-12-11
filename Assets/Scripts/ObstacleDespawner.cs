@@ -21,6 +21,7 @@ public class ObstacleDespawner : MonoBehaviour
     {
         if (other.gameObject.tag == target)
         {
+            //PlayCarCrashSound.playCarSound = true;
             Destroy(other.gameObject);
         }
     }
