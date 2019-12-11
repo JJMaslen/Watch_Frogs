@@ -133,7 +133,10 @@ public class FrogMovement : MonoBehaviour
     {
         if (other.gameObject.tag == "Log")
         {
-            shouldParent = false;
+            if (!shouldParent)
+            {
+                targetPosition = new Vector3(targetPosition.x, 0.339f, targetPosition.z);
+            }
         }
     }
 
