@@ -39,7 +39,7 @@ public class FrogMovement : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.S))
 		{
             audioFrogMove.Play();
-            shouldParent = false;
+            shouldParent = !shouldParent;
 			gameObject.transform.parent = null;
 
             if (targetPosition.x > -9)
@@ -50,8 +50,8 @@ public class FrogMovement : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.W))
 		{
             audioFrogMove.Play();
-            shouldParent = false;
-			gameObject.transform.parent = null;
+            shouldParent = !shouldParent;
+            gameObject.transform.parent = null;
 
             if (targetPosition.x < 228)
             targetPosition += new Vector3(MovementAmount, 0, 0);
@@ -61,8 +61,8 @@ public class FrogMovement : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.D))
 		{
             audioFrogMove.Play();
-            shouldParent = false;
-			gameObject.transform.parent = null;
+            shouldParent = !shouldParent;
+            gameObject.transform.parent = null;
 
             if (targetPosition.z > -20)
                 targetPosition += new Vector3(0, 0, -MovementAmount);
@@ -73,15 +73,20 @@ public class FrogMovement : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.A))
 		{
             audioFrogMove.Play();
-            shouldParent = false;
-			gameObject.transform.parent = null;
+            shouldParent = !shouldParent;
+            gameObject.transform.parent = null;
 
             if (targetPosition.z < 20)
                 targetPosition += new Vector3(0, 0, MovementAmount);
 
 			targetRotation = Quaternion.Euler(0, 180, 0);
 		}
-	}
+
+        if (!shouldParent)
+        {
+            targetPosition = new Vector3(targetPosition.x, 0.339f, targetPosition.z);
+        }
+    }
 
 	private void OnTriggerEnter(Collider other)
     {
@@ -91,7 +96,7 @@ public class FrogMovement : MonoBehaviour
 			shouldParent = true;
 		}
 
-        if (other.gameObject.tag == "River")
+        if (other.gameObject.tag == "River" || other.gameObject.tag == "Bush")
         {
             targetPosition = new Vector3(0.3081f, 0.322f, 13.247f);
         }
@@ -99,6 +104,11 @@ public class FrogMovement : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        if (other.gameObject.tag == "River" || other.gameObject.tag == "Bush")
+        {
+            targetPosition = new Vector3(0.3081f, 0.322f, 13.247f);
+        }
+
         if (other.gameObject.tag == "Car" || other.gameObject.tag == "Enemy")
         {
 			if (lives >= 0)
@@ -123,12 +133,12 @@ public class FrogMovement : MonoBehaviour
     {
         if (other.gameObject.tag == "Log")
         {
-            targetPosition = new Vector3(targetPosition.x, 0.339f, targetPosition.z);
+            shouldParent = false;
         }
     }
 
-	private void OnCollisionExit(Collision collision)
+    private void OnCollisionExit(Collision collision)
 	{
-
-	}
+        
+    }
 }

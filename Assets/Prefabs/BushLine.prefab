@@ -9,9 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2725939192976984996}
+  - component: {fileID: 2384447998892092832}
   m_Layer: 0
   m_Name: BushLine
-  m_TagString: Untagged
+  m_TagString: Bush
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35,6 +36,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2384447998892092832
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7029519250061081202}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 16.668015, y: 3.3189497, z: 3.6959152}
+  m_Center: {x: -0.3115387, y: 0.08705664, z: 0.043128967}
 --- !u!1001 &4966037870208528446
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42,11 +56,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2725939192976984996}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 33b4a53a6b203f342ab8fd43b0e1984b,
-        type: 3}
-      propertyPath: m_Name
-      value: ExBush (4)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 33b4a53a6b203f342ab8fd43b0e1984b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -107,6 +116,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1.0843138
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 33b4a53a6b203f342ab8fd43b0e1984b,
+        type: 3}
+      propertyPath: m_Name
+      value: ExBush (4)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33b4a53a6b203f342ab8fd43b0e1984b, type: 3}
 --- !u!4 &112693272760228644 stripped
@@ -122,11 +136,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2725939192976984996}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 33b4a53a6b203f342ab8fd43b0e1984b,
-        type: 3}
-      propertyPath: m_Name
-      value: ExBush
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 33b4a53a6b203f342ab8fd43b0e1984b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -187,6 +196,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1.0843128
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 33b4a53a6b203f342ab8fd43b0e1984b,
+        type: 3}
+      propertyPath: m_Name
+      value: ExBush
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33b4a53a6b203f342ab8fd43b0e1984b, type: 3}
 --- !u!4 &112693272941932813 stripped
@@ -202,11 +216,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2725939192976984996}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 33b4a53a6b203f342ab8fd43b0e1984b,
-        type: 3}
-      propertyPath: m_Name
-      value: ExBush (1)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 33b4a53a6b203f342ab8fd43b0e1984b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -267,6 +276,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1.0843134
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 33b4a53a6b203f342ab8fd43b0e1984b,
+        type: 3}
+      propertyPath: m_Name
+      value: ExBush (1)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33b4a53a6b203f342ab8fd43b0e1984b, type: 3}
 --- !u!4 &112693273234444125 stripped
@@ -282,11 +296,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2725939192976984996}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 33b4a53a6b203f342ab8fd43b0e1984b,
-        type: 3}
-      propertyPath: m_Name
-      value: ExBush (3)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 33b4a53a6b203f342ab8fd43b0e1984b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -347,6 +356,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1.0843136
       objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 33b4a53a6b203f342ab8fd43b0e1984b,
+        type: 3}
+      propertyPath: m_Name
+      value: ExBush (3)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33b4a53a6b203f342ab8fd43b0e1984b, type: 3}
 --- !u!4 &112693273289063503 stripped
@@ -362,11 +376,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2725939192976984996}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: 33b4a53a6b203f342ab8fd43b0e1984b,
-        type: 3}
-      propertyPath: m_Name
-      value: ExBush (2)
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 33b4a53a6b203f342ab8fd43b0e1984b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -421,6 +430,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -143.11401
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 33b4a53a6b203f342ab8fd43b0e1984b,
+        type: 3}
+      propertyPath: m_Name
+      value: ExBush (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33b4a53a6b203f342ab8fd43b0e1984b, type: 3}
